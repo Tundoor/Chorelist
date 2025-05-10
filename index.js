@@ -4,12 +4,6 @@ let choresDiv = document.querySelector('.chores');
 let input = document.querySelector('.input');
 let body = document.querySelector("body")
 
-
-
-let ItemFromStorage = localStorage.getItem("chores")
-
-console.log(ItemFromStorage)
-
 addBtn.addEventListener("click", () => {
     let inputValue = input.value.trim().toLowerCase();
     if (inputValue === "") {
