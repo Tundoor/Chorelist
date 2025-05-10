@@ -42,7 +42,16 @@ function addToUI() {
         chore.textContent = item;
         newEl.appendChild(chore);
         choresDiv.appendChild(newEl);
+        removeFromUI(newEl, chore)
+    });
+}
 
+function removeFromUI(el, chore) {
+    el.addEventListener("click", () => {
+        let chores = JSON.parse(localStorage.getItem("chores")) || [];
+        chores = chores.filter(item => item !== chore.textContent);
+        localStorage.setItem("chores", JSON.stringify(chores));
+        el.remove();
     });
 }
 
